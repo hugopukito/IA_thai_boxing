@@ -4,17 +4,20 @@ public class Learning {
 
     private HashMap<String, Integer> map = new HashMap<String, Integer>();
 
-    public void add (String s) {
-        if (contains(s)) {
-            int i = map.get(s);
-            map.replace(s, i += 1);
+    public void add (HashMapData h) {
+
+        String total = h.stringify();
+
+        if (containsMap(total)) {
+            int i = map.get(total);
+            map.replace(total, i + 1);
         }
         else {
-            map.put(s,0);
+            map.put(total,1);
         }
     }
 
-    public boolean contains (String s) {
+    public boolean containsMap (String s) {
         if (map.containsKey(s)) {
             return true;
         }
@@ -23,5 +26,27 @@ public class Learning {
 
     public int getValue (String s) {
         return map.get(s);
+    }
+
+    public String getBestOption (Techniques[] t) {
+
+        String find = "";
+        int count = 0;
+
+        for (Techniques i : t) {
+            find += i.toString();
+        }
+
+        for (String key : map.keySet()) {
+            String[] part = key.split("1");
+            String first = part[0];
+            System.out.println("first : " + first);
+            System.out.println("find  : " + find);
+            if (find.equals(first)) {
+                count ++;
+            }
+        }
+
+        return String.valueOf(count);
     }
 }

@@ -9,15 +9,36 @@ public class HashMapData {
     }
 
     public String stringify () {
+
         String fs = "";
         for (Techniques i : first) {
            fs += i.toString();
         }
 
         String ss = "";
-        for (Techniques i : first) {
+        for (Techniques i : second) {
             ss += i.toString();
         }
-        return fs + ss;
+        return fs + "1" + ss;
+    }
+
+    public String stringifyFirst () {
+
+        String fs = "";
+        for (Techniques i : first) {
+            fs += i.toString();
+        }
+
+        return fs;
+    }
+
+    public String stringifySecond() {
+
+        String ss = "";
+        for (Techniques i : second) {
+            ss += i.toString();
+        }
+
+        return ss;
     }
 }
