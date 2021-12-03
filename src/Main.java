@@ -29,8 +29,10 @@ public class Main {
         l.add(h3);
         System.out.println(l.getValue(h.stringify()));
 
-        System.out.println(l.getBestOption(t1));
-        /*System.out.println(l.getBestOption(t2));
-        System.out.println(l.getBestOption(t3));*/
+        System.out.println();
+
+        l.getBestOptions(t1);
+        /*System.out.println(l.getBestOptions(t2));
+        System.out.println(l.getBestOptions(t3));*/
     }
 }

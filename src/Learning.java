@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Learning {
@@ -28,10 +29,10 @@ public class Learning {
         return map.get(s);
     }
 
-    public String getBestOption (Techniques[] t) {
+    public void getBestOptions (Techniques[] t) {
 
         String find = "";
-        int count = 0;
+        ArrayList<String> list = new ArrayList<String>();
 
         for (Techniques i : t) {
             find += i.toString();
@@ -40,13 +41,16 @@ public class Learning {
         for (String key : map.keySet()) {
             String[] part = key.split("1");
             String first = part[0];
-            System.out.println("first : " + first);
-            System.out.println("find  : " + find);
+            /*System.out.println("first : " + first);
+            System.out.println("find  : " + find);*/
             if (find.equals(first)) {
-                count ++;
+                list.add(key);
             }
         }
 
-        return String.valueOf(count);
+        for(int i = 0 ; i < list.size(); i++){
+            System.out.println(list.get(i));
+            System.out.println(getValue(list.get(i)));
+        }
     }
 }
